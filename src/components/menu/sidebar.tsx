@@ -1,20 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { SIDEBAR_MENU } from "./constant";
+import { usePathname } from "next/navigation";
+import { DASSBOARD_SIDEBAR_MENU } from "./constant";
 
 const Sidebar = () => {
+  const pathname = usePathname();
+
   return (
     <aside className="h-screen w-1/12 font-medium text-base flex flex-col gap-1 bg-white">
-      {SIDEBAR_MENU.map((menu) => (
-        <Link
-          key={menu.id}
-          href={menu.path}
-          className="hover:bg-gray-50 w-full p-2"
-        >
-          {menu.name}
-        </Link>
-      ))}
+      {DASSBOARD_SIDEBAR_MENU.map((menu) => {
+        const isActive = pathname.includes(menu.path);
+        return (
+          <Link
+            key={menu.id}
+            href={menu.path}
+            className={`${
+              isActive ? "bg-gray-50" : ""
+            } hover:bg-gray-50 w-full p-2`}
+          >
+            {menu.name}
+          </Link>
+        );
+      })}
     </aside>
   );
 };
