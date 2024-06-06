@@ -1,7 +1,9 @@
+import SalaryCcount from "@/features/salary-count";
+
 const Page = () => {
   return (
-    <div>
-      <h1>This is users page</h1>
+    <div className="p-6 w-full min-h-screen flex justify-center items-center">
+      <SalaryCcount />
     </div>
   );
 };

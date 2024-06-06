@@ -9,8 +9,10 @@ export default function DashboardLayout({
   return (
     <section>
       <div className="flex bg-gray-50">
-        <Sidebar />
-        {children}
+        <div className="w-[15%]">
+          <Sidebar />
+        </div>
+        <div className="w-[85%]">{children}</div>
       </div>
     </section>
   );

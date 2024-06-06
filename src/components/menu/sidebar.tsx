@@ -8,7 +8,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="h-screen w-1/12 font-medium text-base flex flex-col gap-1 bg-white">
+    <aside className="h-screen w-full font-medium text-base flex flex-col gap-1 bg-white">
       {DASSBOARD_SIDEBAR_MENU.map((menu) => {
         const isActive = pathname.includes(menu.path);
         return (
